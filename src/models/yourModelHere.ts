@@ -10,7 +10,7 @@ export function getMovies() {
   return movies;
 }
 // GET A Movie BY ID
-export function getMovieByID(id :number ) {
+export function getMovieByID(id : number | string ) {
   console.log("id:" + id);
   const movieById = movies.find((movie) => {
     console.log(movie);

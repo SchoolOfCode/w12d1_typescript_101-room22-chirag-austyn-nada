@@ -46,9 +46,9 @@ if (process.env.NODE_ENV === "production") {
 // Add api router
 app.use("/", apiRouter);
 
-app.get("/movie/:id", async function (req:string, res:string):Promise {
+app.get("/movie/:id", async function (req: Request, res: Response):Promise<object> {
   console.log(req.params.id);
-  const movieByID = await getMovieByID(req.params.id);
+  const movieByID = getMovieByID(req.params.id);
   if (movieByID) {
     res.json({
       success: true,
